@@ -20,23 +20,22 @@ git config --global user.name "Ryan Bottoms"
 git config --global user.email "rkbottoms@users.noreply.github.com"
 
 # install python tools
-sudo apt-get install python3 python3-pip
-sudo apt-get install python3-venv
+sudo apt-get install -y python3 python3-pip
+sudo apt-get install -y python3-venv
 # VS Code complains if Pylint is unavailable as it cannot do some code checking:
 pip3 install pylint
 pip3 install virtualenvwrapper
 
 # install json tools 
-sudo apt-get install jq
+sudo apt-get -y install jq
 
 # productivity tools
 sudo apt-get install -y fzf fd-find httpie ripgrep htop
 wget -O- https://bit.ly/glances | /bin/bash
 
 # install dotfiles
-cd ../
 git clone https://github.com/rkbottoms/dotfiles.git
-bash dotfiles/install-dotfiles.sh
+bash install-dotfiles.sh
 rm -rf /dotfiles
 
 #create folder to projects
