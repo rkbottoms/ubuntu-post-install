@@ -31,12 +31,14 @@ sudo apt-get -y install jq
 
 # productivity tools
 sudo apt-get install -y fzf fd-find httpie ripgrep htop
-wget -O- https://bit.ly/glances | /bin/bash
+pip install glances 
 
 # install dotfiles
 git clone https://github.com/rkbottoms/dotfiles.git
+cd dotfiles/
 bash install-dotfiles.sh
-rm -rf /dotfiles
+cd ../
+rm -rf dotfiles/
 
 #create folder to projects
 if [ ! -d /mnt/c/Users/ryanb/My Documents/Development ]; 
