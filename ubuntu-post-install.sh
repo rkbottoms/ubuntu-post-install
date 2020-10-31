@@ -31,10 +31,10 @@ sudo apt-get -y install jq
 
 # productivity tools
 sudo apt-get install -y fzf fd-find httpie ripgrep htop
-pip install glances 
+pip3 install glances 
 
 # install dotfiles
-git clone https://github.com/rkbottoms/dotfiles.git
+git clone git@github.com:rkbottoms/dotfiles.git
 cd dotfiles/
 bash install-dotfiles.sh
 cd ../
