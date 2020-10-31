@@ -41,8 +41,8 @@ cd ../
 rm -rf dotfiles/
 
 #create folder to projects
-if [ ! -d /mnt/c/Users/ryanb/My Documents/Development ]; 
-	then mkdir -p /mnt/c/Users/ryanb/My Documents/Development; 
+if [ ! -d /mnt/c/Users/ryanb/'My Documents'/Development ]; 
+	then mkdir -p /mnt/c/Users/ryanb/'My Documents'/Development; 
 fi
 
 #link folder to WSL 
