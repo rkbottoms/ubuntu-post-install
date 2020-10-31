@@ -47,7 +47,7 @@ fi
 
 #link folder to WSL 
 if [ ! -h ~/Development ]; 
-	then ln -s /mnt/c/Users/ryanb/My Documents/Development
+	then ln -s /mnt/c/Users/ryanb/'My Documents'/Development
 fi
 
 #add ssh key to github
