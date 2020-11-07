@@ -53,6 +53,23 @@ fi
 #add ssh key to github
 #copy ssh key from wsl to windows 
 
+#set up pip autocompletion
+pip completion --bash >> ~/.bashrc
+#set up virtualenv
+echo "#activate virtualenvwrapper on startup" >> ~/.bashrc
+echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" >> ~/.bashrc
+echo "export WORKON_HOME= /mnt/c/Users/ryanb/My\ Documents/Development/python"  >> ~/.bashrc
+echo "source ~/.local/bin/virtualenvwrapper.sh" >> ~/.bashrc
+
+source ~/.bashrc
+
+#install conda
+wget https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh -O ~/anaconda.sh
+bash ~/anaconda.sh -b -p $HOME/anaconda
+conda init
+conda config --set auto_activate_base false
+conda update --all
+
 #clean up
 sudo apt-get -y autoclean
 sudo apt-get -y autoremove
