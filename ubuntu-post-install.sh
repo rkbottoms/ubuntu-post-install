@@ -91,6 +91,13 @@ sudo apt-get install pandoc texlive-full textlive-latex-extra wkhmtmltopdf -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb -y 
 
+# install hugo
+wget https://github.com/gohugoio/hugo/releases/download/v0.80.0/hugo_extended_0.80.0_Linux-64bit.deb
+sudo dpkg -i hugo_extended_0.80.0_Linux-64bit.deb
+curl -fsSL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+sudo apt-get install -y nodejs
+npm install postcss-cli
+
 #clean up
 sudo apt-get -y autoclean
 sudo apt-get -y autoremove
