@@ -69,7 +69,29 @@ bash ~/anaconda.sh -b -p $HOME/anaconda
 conda init
 conda config --set auto_activate_base false
 conda update --all
+echo "export BROWSER='/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'" >> ~/.bashrc
+conda activate
+conda install -c conda-forge jupyterlab -y 
+jupyter lab --generate-config
+conda deactivate
+
+# install .net core sdk and runtime
+wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+sudo apt-get update
+sudo apt-get install -y apt-transport-https
+sudo apt-get update 
+sudo apt-get install -y dotnet-sdk-5.0
+dotnet tool install -g dotnet-runtimeinfo
+
+# install math tools
+sudo apt-get install pandoc texlive-full textlive-latex-extra wkhmtmltopdf -y
+
+# install google chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb -y 
 
 #clean up
 sudo apt-get -y autoclean
 sudo apt-get -y autoremove
+echo "Remember to uncomment 'c.NotebookApp.use_redirect_file = False' in the jupyter lab config file"
